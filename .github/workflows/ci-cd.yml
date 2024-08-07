@@ -1,0 +1,54 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'  # Usa la versión de Node.js que estás utilizando
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run Lint
+      run: npm run lint  # Asegúrate de tener un script de linting definido en tu package.json
+
+    - name: Run Tests
+      run: npm test  # Asegúrate de tener pruebas definidas en tu proyecto
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Deploy
+      run: |
+        # Aquí puedes añadir comandos para desplegar tu aplicación
+        # Ejemplo para despliegue a un servidor (personaliza según tu infraestructura)
+        echo "Desplegando aplicación..."
+        # Ejemplo de despliegue usando rsync (requiere configuración adicional)
+        # rsync -avz --exclude 'node_modules' ./ user@yourserver:/path/to/deploy/
