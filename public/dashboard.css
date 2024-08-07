@@ -1,0 +1,124 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d0d0d;
+    color: #33ff33;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.animation-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(14,14,14,1) 35%, rgba(51,51,51,1) 100%);
+    background-size: 200% 200%;
+    animation: backgroundAnimation 15s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.actions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.actions button {
+    background-color: #1a1a1a;
+    color: #33ff33;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.actions button:hover {
+    background-color: #333;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input, button {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    background-color: #333;
+    border: none;
+    color: #33ff33;
+    border-radius: 5px;
+}
+
+.password-list {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.password-item {
+    background-color: #262626;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.password-item:hover {
+    background-color: #333;
+}
+
+.password-item span {
+    word-break: break-all;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.password-item button {
+    background-color: #1a1a1a;
+    color: #33ff33;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.password-item button:hover {
+    background-color: #333;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - User Password Manager</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="animation-background"></div>
+    <div class="container">
+        <h1>User Password Manager</h1>
+        <div class="actions">
+            <button onclick="toggleAddPassword()">Añadir Contraseña</button>
+        </div>
+        <div class="form-container" id="formContainer" style="display: none;">
+            <input type="text" id="site" placeholder="Sitio Web">
+            <input type="text" id="username" placeholder="Nombre de Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="addPassword()">Guardar</button>
+        </div>
+        <div class="password-list" id="passwordList"></div>
+    </div>
+    <script src="crypto.js"></script>
+    <script src="database.js"></script>
+</body>
+</html>
