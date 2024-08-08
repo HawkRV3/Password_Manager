@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/* eslint-disable no-unused-vars */
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -24,11 +25,14 @@ function login() {
         }
     });
 }
+/* eslint-enable no-unused-vars */
 
+/* eslint-disable no-unused-vars */
 function toggleAddPassword() {
     const formContainer = document.getElementById('formContainer');
-    formContainer.style.display = formContainer.style.display === 'none' ? 'flex' : 'none';
+    formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
 }
+/* eslint-enable no-unused-vars */
 
 function sanitizeInput(input) {
     const element = document.createElement('div');
@@ -56,6 +60,7 @@ function loadPasswords() {
         });
 }
 
+/* eslint-disable no-unused-vars */
 function addPassword() {
     const site = sanitizeInput(document.getElementById('site').value);
     const username = sanitizeInput(document.getElementById('username').value);
@@ -79,7 +84,9 @@ function addPassword() {
         alert('Por favor, complete todos los campos.');
     }
 }
+/* eslint-enable no-unused-vars */
 
+/* eslint-disable no-unused-vars */
 function deletePassword(index) {
     fetch(`/passwords/${index}`, {
         method: 'DELETE'
@@ -88,3 +95,4 @@ function deletePassword(index) {
         loadPasswords();
     });
 }
+/* eslint-enable no-unused-vars */

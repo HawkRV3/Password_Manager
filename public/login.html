@@ -13,7 +13,18 @@
         <input type="text" id="username" placeholder="Nombre de Usuario">
         <input type="password" id="password" placeholder="Contraseña">
         <button onclick="login()">Ingresar</button>
+        <button onclick="addPassword()">Agregar Contraseña</button>
     </div>
+    
+    <div id="formContainer" style="display: none;">
+        <input type="text" id="site" placeholder="Sitio">
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="addPassword()">Guardar Contraseña</button>
+    </div>
+
+    <div id="passwordList"></div>
+    <button onclick="toggleAddPassword()">Añadir Contraseña</button>
     <script src="crypto.js"></script>
     <script src="database.js"></script>
 </body>
