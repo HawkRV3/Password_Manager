@@ -110,4 +110,8 @@ To start the application with Docker Compose, run:
 ```sh
 docker-compose up
 ```
-
+# Docker pull command
+With this command, you can download the image for use on any machine.
+```sh
+docker pull jonhatan2004/gestor
+```
