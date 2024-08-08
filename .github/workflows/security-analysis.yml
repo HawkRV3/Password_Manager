@@ -23,5 +23,8 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Authenticate Snyk
+      run: npx snyk auth ${{ secrets.SNYK_TOKEN }}
+
     - name: Run Security Analysis with Snyk
       run: npx snyk test --all-projects
