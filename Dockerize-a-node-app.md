@@ -115,3 +115,7 @@ With this command, you can download the image for use on any machine.
 ```sh
 docker pull jonhatan2004/gestor
 ```
+And you can run it with this command
+```sh
+docker run -p 3000:3000 jonhatan2004/gestor
+```
